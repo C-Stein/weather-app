@@ -18,8 +18,8 @@ requirejs.config({
 
     
 requirejs(
-  ["dependencies"],
-  function(dependencies) {
+  ["dependencies", "auth_zip"],
+  function(dependencies, auth) {
     
    
   });
