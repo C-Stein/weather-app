@@ -6,9 +6,16 @@ define(['jquery'], function($) {
       }).done(function(data) {
         
           console.log(data);
-
-        });
-      
+        var weather = {
+          "temp": data.main.temp,
+          "id": data.id,
+          "pressure": data.main.pressure,
+          "wind-speed": data.wind.speed,
+          "humidity": data.main.humidity
+        }
+        console.log("weather", weather);
+      });
+      return weather;
     }
   };
 });
