@@ -41,7 +41,10 @@ requirejs(
   } else {
       auth.setUid(authData.uid);
       require(["core-logic"], function() {});
-  }   
+
+  }  
+
+    
 
 });
 
