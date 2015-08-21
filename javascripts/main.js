@@ -18,11 +18,34 @@ requirejs.config({
 
     
 requirejs(
-  ["dependencies"],
-  function(dependencies) {
+  ["dependencies", "authentication"],
+  function(dependencies, auth) {
     
-   
-  });
+    
+  var ref = new Firebase("https://nss-weather.firebaseio.com/");
+  var authData = ref.getAuth();
+
+  if (authData === null) {
+
+    ref.authWithOAuthPopup("github", function(error, authData) {
+      if (error) {
+        console.log("Login Failed!", error);
+      } else {
+        console.log("Authenticated successfully with payload:", authData);
+        auth.setUid(authData.uid);
+        //require(["core-logic"], function() {});
+      }
+    });
+  } else {
+      auth.setUid(authData.uid);
+      //require(["core-logic"], function() {});
+  }   
+
+
+
+
+
+});
 
 
 
