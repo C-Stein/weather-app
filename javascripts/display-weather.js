@@ -4,10 +4,11 @@ define(['jquery'], function($) {
       $.ajax({
         url: "http://api.openweathermap.org/data/2.5/weather?zip=" + zipCode + "&units=imperial&APPID=1b7f1f7355165ced17dbbeaf8d5ed137"
       }).done(function(data) {
-        //ref.child(data.Title.toLowerCase()).set({
-          "temp": data.main.temp
+        
+          console.log(data);
+
         });
-      });
+      
     }
   };
 });
