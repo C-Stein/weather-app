@@ -1,16 +1,11 @@
-<div class="weatherWidget">
-  {{#each partials.weatherData.locations}}
-    <div class="location">
-      <h3>{{name}}</h3>
-      <a href="{{forecastUrl}}">
-        <img src="{{iconUrl}}" alt="{{weather}}">
-        {{weather}}, {{temp}}
-      </a>
+
+  {{#each this}}
+    <div>
+      {{city.id}}
     </div>
-  {{/each}}
-  <small>
+
+      <p>{{base}}{{pressure}}{{humidity}}{{wind-speed}}</p>
+
     <button class="threeDay" type="button">Three day</button>
     <button class="sevenDay" type="button">Seven day</button>
-    Source: <a href="http://www.wunderground.com">Weather Underground</a>
-  </small>
-</div>
+  {{/each}}
