@@ -17,9 +17,11 @@ requirejs.config({
 });
 
     
+
 requirejs(
-  ["dependencies", "authentication", "longerForecast", "display-weather"],
-  function(dependencies, auth, longer, display) {
+  ["dependencies", "authentication", "longerForecast", "display-weather", "auth_zip"],
+  function(dependencies, auth, longer, display, authZip) {
+
     
     
   var ref = new Firebase("https://nss-weather.firebaseio.com/");
@@ -40,10 +42,6 @@ requirejs(
       auth.setUid(authData.uid);
       require(["core-logic"], function() {});
   }   
-
-
-
-
 
 });
 
