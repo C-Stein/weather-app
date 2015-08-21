@@ -1,4 +1,5 @@
 define(['jquery'], function($) {
+  var weather;
   return {
     addWeather: function(zipCode) {
       $.ajax({
@@ -6,7 +7,7 @@ define(['jquery'], function($) {
       }).done(function(data) {
         
           console.log(data);
-        var weather = {
+        weather = {
           "temp": data.main.temp,
           "id": data.id,
           "pressure": data.main.pressure,
