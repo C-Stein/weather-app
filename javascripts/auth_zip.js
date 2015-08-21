@@ -1,8 +1,8 @@
 define(function(require) {
   var $ = require("jquery");
 
-  $("#subButton").click(function(e) {
-    var userInput = $("#userInput").val();
+  $("#search").click(function(e) {
+    var userInput = $("#searchText").val();
      e.preventDefault();
 
     if(userInput.length === 5) {
