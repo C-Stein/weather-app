@@ -13,7 +13,7 @@ define(['jquery', 'get-templates'], function($, getTemplates) {
           "pressure": data.main.pressure,
           "wind-speed": data.wind.speed,
           "humidity": data.main.humidity
-        }
+        };
         console.log("weather", weather); 
         var populatedTemplate = getTemplates.weatherTpl(weather);
        
