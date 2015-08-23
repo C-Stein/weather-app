@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
+  <meta property="og:type" content="website"/>
 	<title>Weather</title>
 	<link rel="stylesheet" type="text/css" href="/lib/bower_components/bootstrap/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="styles/main.css">
@@ -29,14 +30,16 @@
 	</nav>
   <div id="cont" class="container-fluid">
     <div id="rowEq" class="row row-eq-height">
-      <div id="main" class="col-xs-9 main">
+      <div class="col-xs-9 main">
         <div class="input-group">
           <span class="input-group-btn">
             <button id="search" class="btn btn-default" type="button">
               <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
             </button>
           </span>
-          <input id="searchText" type="number" class="form-control" placeholder="Search Weather...">
+          <input id="searchText" type="number" min="0" class="form-control" placeholder="Search Weather...">
+        </div>
+        <div id="main">
         </div>
       </div>
       <div id="sideId" class="col-xs-3 side">
