@@ -1,5 +1,6 @@
 define(['jquery', 'get-templates'], function($, getTemplates) {
   var weather;
+  var now = new Date();
 
   return {
     addWeather: function(zipCode) {
@@ -16,9 +17,10 @@ define(['jquery', 'get-templates'], function($, getTemplates) {
           "dt": data.dt,
           "pressure": data.main.pressure,
           "wind-speed": data.wind.speed,
-          "humidity": data.main.humidity
+          "humidity": data.main.humidity,
+          "date": now
         };
-        
+        console.log("now", now);
         console.log("weather", weather); 
         var populatedTemplate = getTemplates.weatherTpl(weather);
        

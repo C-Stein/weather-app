@@ -6,12 +6,16 @@ requirejs.config({
     'lodash': '../lib/bower_components/lodash/lodash.min',
     'hbs': '../lib/bower_components/require-handlebars-plugin/hbs',
     'bootstrap': '../lib/bower_components/bootstrap/dist/js/bootstrap.min',
-    'q': '../lib/bower_components/q/q'
+    'q': '../lib/bower_components/q/q',
+    'facebook': '//connect.facebook.net/en_US/sdk'
   },
   shim: {
     'bootstrap': ['jquery'],
     'firebase': {
       exports: 'Firebase'
+    },
+    'facebook' : {
+      exports: 'FB'
     }
   }
 });
@@ -19,8 +23,8 @@ requirejs.config({
     
 
 requirejs(
-  ["dependencies", "authentication", "longerForecast", "display-weather", "auth_zip"],
-  function(dependencies, auth, longer, display, authZip) {
+  ["dependencies", "authentication", "longerForecast", "display-weather", "auth_zip", 'fb'],
+  function(dependencies, auth, longer, display, authZip, fb) {
 
     
     
