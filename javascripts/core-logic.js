@@ -15,13 +15,11 @@ define(function(require) {
     var weather = display.addWeather(zipCode);
 
         console.log("zipCode", zipCode);
-        console.log("weather", weather);
-
-
+  
     });
 
     $("#searchText").keyup(function(event){
-      if(event.keyCode == 13){
+      if(event.which == 13){
         $("#search").click();
       }
     });
