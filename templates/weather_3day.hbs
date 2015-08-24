@@ -1,0 +1,16 @@
+<button class="threeDay btn btn-default" type="button">Three day</button>
+<button class="sevenDay btn btn-default" type="button">Seven day</button>
+<div class="row">
+  {{#each this}}
+    <div class="col-md-3"> 
+      <h2>{{this.name}}</h2>
+      <h4>Max. temperature: {{max_temp}}</h4>
+      <h4>Min. temperature: {{min_temp}}</h4>
+      <h5>Weather: {{weather}}</h5>
+      <p>Pressure: {{pressure}}</p>
+      <p>Humidity: {{humidity}}</p>
+      <p>Wind: {{wind-speed}}</p>
+    </div>
+  {{/each}}
+  <div class="col-md-3"></div>
+</div>

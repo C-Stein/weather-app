@@ -1,11 +1,41 @@
-
-  {{#each this}}
-    <div>
-      {{city.id}}
+<button  class="threeDay btn btn-default" type="button">Three day</button>
+<button class="sevenDay btn btn-default" type="button">Seven day</button>
+<div class="row">
+  <div class="col-md-4">
+  </div>
+  <div class="col-md-4">
+    <h2>{{city}}</h2>
+    <h4>Temperature: {{temp}}</h4>
+    <h5>Weather: {{weather}}</h5>
+    <p>Pressure: {{pressure}}</p>
+    <p>Humidity: {{humidity}}</p>
+    <p>Wind: {{wind-speed}}</p>
+    <div id="fb-root"></div>
+    <script>
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <div class="fb-share-button col-xs-3" data-href="http://api.openweathermap.org/data/2.5/weather?id={{id}}&mode=html&APPID=1b7f1f7355165ced17dbbeaf8d5ed137" data-layout="button">
     </div>
+    <div class="col-xs-8">
+      <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://api.openweathermap.org/data/2.5/weather?id={{id}}&mode=html&APPID=1b7f1f7355165ced17dbbeaf8d5ed137/" data-count="none">Tweet</a>
+      <script>
+        !function(d,s,id) {
+          var js,fjs=d.getElementsByTagName(s)[0],
+            p=/^http:/.test(d.location)?'http':'https';
+          if(!d.getElementById(id)) {
+            js=d.createElement(s);
+            js.id=id;js.src=p+'://platform.twitter.com/widgets.js';
+            fjs.parentNode.insertBefore(js,fjs);
+          }
+        }(document, 'script', 'twitter-wjs');
+      </script>
+    </div>
+  </div>
+</div>
 
-      <p>{{base}}{{pressure}}{{humidity}}{{wind-speed}}</p>
-
-    <button class="threeDay" type="button">Three day</button>
-    <button class="sevenDay" type="button">Seven day</button>
-  {{/each}}
