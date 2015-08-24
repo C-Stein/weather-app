@@ -9,10 +9,13 @@
 	border: 2px solid black;
 }
 
-.side {
-		border: 2px solid black;
+body {
+  background-image: url("../styles/images/background2.jpg");
+	background-size: cover;
 }
 
-#search {
-	
+.row {
+	background-color: black;
+	color: white;
+	opacity: 0.8;
 }
